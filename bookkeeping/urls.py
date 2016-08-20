@@ -1,10 +1,10 @@
 from django.conf.urls import url
 
-from . import views
+from .views import Index, Book, Expense
 
 urlpatterns = [
     # ex: /
-    url(r'^$', views.index, name='index'),
+    url(r'^$', Index.as_view(), name='index'),
     # ex: /5/
-    url(r'^(?P<book_id>[0-9]+)/$', views.book, name='book')
+    url(r'^(?P<book_id>[0-9]+)/$', Book.as_view(), name='book')
 ]
